@@ -33,17 +33,17 @@ CFnat-OpenWrt目仅供教育、研究和安全测试目的而设计和开发。�
 ### 使用方法
 一键脚本
 ```
-curl -fsSL https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat.sh -o cfnat.sh && chmod +x cfnat.sh && ./cfnat.sh
+curl -fsSL https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat.sh -o cfnat.sh && chmod +x cfnat.sh && ./cfnat.sh
 ```
 剩下的不理解就一路回车就行了
 
 如果你没有进入脚本主菜单，说明上面一键脚本用不了，试试下面的这两条
 ```
-curl -fsSLk https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat.sh -o cfnat.sh && chmod +x cfnat.sh && ./cfnat.sh
+curl -fsSLk https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat.sh -o cfnat.sh && chmod +x cfnat.sh && ./cfnat.sh
 ```
 都不行就用镜像地址(cloudflare)
 ```
-curl -fsSLk https://p.goxo.us.kg/zxxc/https/raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat.sh -o cfnat.sh && chmod +x cfnat.sh && ./cfnat.sh
+curl -fsSLk https://p.goxo.us.kg/zxxc/https/raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat.sh -o cfnat.sh && chmod +x cfnat.sh && ./cfnat.sh
 ```
 ### 安装后打开主菜单
 ```
