@@ -125,16 +125,16 @@ download_github_repo() {
     ARCH=$(uname -m)
     case "$ARCH" in
         x86_64)
-            FILE_URL="https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat-linux-amd64"
+            FILE_URL="https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat-linux-amd64"
             ;;
         i386)
-            FILE_URL="https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat-linux-386"
+            FILE_URL="https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat-linux-386"
             ;;
         aarch64)
-            FILE_URL="https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat-linux-arm64"
+            FILE_URL="https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat-linux-arm64"
             ;;
         arm*)
-            FILE_URL="https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat-linux-arm"
+            FILE_URL="https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat-linux-arm"
             ;;
         *)
             echo -e "${RED}不支持的系统架构: $ARCH${NC}"
@@ -148,10 +148,10 @@ download_github_repo() {
 }
 
 download_necessary_files() {
-    download_file "https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/ips-v4.txt" "$INSTALL_DIR/ips-v4.txt"
-    download_file "https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/ips-v6.txt" "$INSTALL_DIR/ips-v6.txt"
-    download_file "https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/locations.json" "$INSTALL_DIR/locations.json"
-    download_file "https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/refs/heads/main/version.txt" "$INSTALL_DIR/version.txt"
+    download_file "https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/ips-v4.txt" "$INSTALL_DIR/ips-v4.txt"
+    download_file "https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/ips-v6.txt" "$INSTALL_DIR/ips-v6.txt"
+    download_file "https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/locations.json" "$INSTALL_DIR/locations.json"
+    download_file "https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/refs/heads/main/version.txt" "$INSTALL_DIR/version.txt"
     echo -e "${GREEN}必要的文件下载成功${NC}"
 }
 
@@ -329,7 +329,7 @@ show_current_config() {
 main_menu() {
     show_current_config
     echo "========================"
-    echo -e "${GREEN}脚本作者：PoemMistyMoon${NC}"
+    echo -e "${GREEN}脚本作者：yoshino2${NC}"
     check_version
     echo "========================"
     echo -e "${GREEN}1. 启动/安装 cfnat${NC}"
@@ -378,9 +378,9 @@ main_menu() {
              echo -e "${GREEN}正在更新脚本...${NC}"
              rm -f "$0"
     
-             if ! curl -fsSLk https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat.sh -o cfnat.sh; then
+             if ! curl -fsSLk https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat.sh -o cfnat.sh; then
              echo -e "${RED}主地址下载失败，正在尝试镜像地址...${NC}"
-             if ! curl -fsSLk https://p.goxo.us.kg/zxxc/https/raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/main/cfnat.sh -o cfnat.sh; then
+             if ! curl -fsSLk https://p.goxo.us.kg/zxxc/https/raw.githubusercontent.com/yoshino2/cfnat-openwrt/main/cfnat.sh -o cfnat.sh; then
             echo -e "${RED}镜像地址下载失败，请检查网络或地址。${NC}"
             exit 1
             fi
@@ -451,10 +451,10 @@ kill_cfnat_process() {
 }
 
 check_version() {
-    REMOTE_VERSION=$(curl -s https://raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/refs/heads/main/version.txt)
+    REMOTE_VERSION=$(curl -s https://raw.githubusercontent.com/yoshino2/cfnat-openwrt/refs/heads/main/version.txt)
 
     if [ $? -ne 0 ]; then
-        REMOTE_VERSION=$(curl -s "https://p.goxo.us.kg/zxxc/https/raw.githubusercontent.com/PoemMistyMoon/cfnat-openwrt/refs/heads/main/version.txt")
+        REMOTE_VERSION=$(curl -s "https://p.goxo.us.kg/zxxc/https/raw.githubusercontent.com/yoshino2/cfnat-openwrt/refs/heads/main/version.txt")
     fi
     
     if [ ! -f "$INSTALL_DIR/version.txt" ]; then
